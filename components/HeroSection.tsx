@@ -6,7 +6,7 @@ export default function HeroSection() {
     <section className="grain relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background house rendering */}
       <div className="absolute inset-0 bg-[#0B0B0B]">
-        <Image src="/house.jpg" alt="Casa JohnSUN" fill priority className="object-cover object-center" style={{ opacity: 0.38 }} sizes="100vw" />
+        <Image src="/house.webp" alt="Casa JohnSUN" fill priority fetchPriority="high" className="object-cover object-center" style={{ opacity: 0.38 }} sizes="100vw" />
       </div>
 
       {/* Layered cinematic gradients */}

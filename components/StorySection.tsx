@@ -49,7 +49,7 @@ export default function StorySection() {
 
       {/* House image — right side decorative */}
       <div className="absolute right-0 top-0 bottom-0 w-1/2 md:w-2/5 pointer-events-none overflow-hidden hidden lg:block">
-        <Image src="/house.jpg" alt="" fill className="object-cover object-left" style={{ opacity: 0.07 }} />
+        <Image src="/house.webp" alt="" fill className="object-cover object-left" style={{ opacity: 0.07 }} sizes="40vw" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #0d0906 0%, transparent 60%)" }} />
       </div>
 

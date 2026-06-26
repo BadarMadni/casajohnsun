@@ -29,7 +29,7 @@ export default function FooterSection() {
         <ScrollReveal>
           {/* Logo */}
           <div className="flex justify-center mb-6">
-            <Image src="/logo-horizontal.png" alt="Casa JohnSUN" width={200} height={94} className="object-contain" style={{ height: "auto" }} />
+            <Image src="/logo-horizontal.webp" alt="Casa JohnSUN" width={200} height={94} className="object-contain" style={{ height: "auto" }} />
           </div>
           <p className="font-body text-[10px] tracking-[0.5em] uppercase mb-10" style={{ color: "#A79A8E" }}>
             casajohnsun.com · Scottsdale, AZ · EST. 2026

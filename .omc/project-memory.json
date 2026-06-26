@@ -113,8 +113,8 @@
   "hotPaths": [
     {
       "path": "components/Navbar.tsx",
-      "accessCount": 6,
-      "lastAccessed": 1782478457407,
+      "accessCount": 7,
+      "lastAccessed": 1782490225082,
       "type": "file"
     },
     {
@@ -125,8 +125,20 @@
     },
     {
       "path": "components/FooterSection.tsx",
+      "accessCount": 6,
+      "lastAccessed": 1782490249611,
+      "type": "file"
+    },
+    {
+      "path": "components/HeroSection.tsx",
       "accessCount": 5,
-      "lastAccessed": 1782479601840,
+      "lastAccessed": 1782490222512,
+      "type": "file"
+    },
+    {
+      "path": "components/StorySection.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1782490223740,
       "type": "file"
     },
     {
@@ -136,21 +148,15 @@
       "type": "file"
     },
     {
-      "path": "components/HeroSection.tsx",
-      "accessCount": 4,
-      "lastAccessed": 1782479198222,
-      "type": "file"
-    },
-    {
       "path": "components/StatCounter.tsx",
       "accessCount": 4,
       "lastAccessed": 1782479400349,
       "type": "file"
     },
     {
-      "path": "components/StorySection.tsx",
-      "accessCount": 4,
-      "lastAccessed": 1782479431155,
+      "path": "app/layout.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1782490309597,
       "type": "file"
     },
     {

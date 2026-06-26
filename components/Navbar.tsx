@@ -44,7 +44,7 @@ export default function Navbar() {
           className="flex items-center group transition-opacity hover:opacity-80"
         >
           <Image
-            src="/logo-horizontal.png"
+            src="/logo-horizontal.webp"
             alt="Casa JohnSUN"
             width={988}
             height={465}
