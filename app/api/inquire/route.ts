@@ -1,16 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
-
 export async function POST(req: NextRequest) {
   try {
     const { name, email, phone, type, message } = await req.json();
@@ -18,6 +8,16 @@ export async function POST(req: NextRequest) {
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
+
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
 
     await transporter.sendMail({
       from: `"Casa JohnSUN Website" <${process.env.SMTP_USER}>`,
