@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import InquireModal from "./InquireModal";
 
 const links = [
   { label: "The Story", href: "#story" },
@@ -13,6 +14,7 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [inquireOpen, setInquireOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -66,12 +68,12 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a
-            href="mailto:nikki@casajohnsun.com"
-            className="btn-gold hero-cta font-body text-[10px] tracking-[0.25em] uppercase px-6 py-2.5 border"
+          <button
+            onClick={() => setInquireOpen(true)}
+            className="hero-watch-btn font-body text-[10px] tracking-[0.25em] uppercase px-6 py-2.5"
           >
             Inquire
-          </a>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -103,11 +105,13 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="mailto:nikki@casajohnsun.com" className="font-body text-xs tracking-[0.3em] uppercase" style={{ color: "#C7A15A" }}>
+          <button onClick={() => { setMenuOpen(false); setInquireOpen(true); }} className="font-body text-xs tracking-[0.3em] uppercase text-left" style={{ color: "#C7A15A" }}>
             Inquire →
-          </a>
+          </button>
         </div>
       )}
+
+      <InquireModal isOpen={inquireOpen} onClose={() => setInquireOpen(false)} />
     </nav>
   );
 }
