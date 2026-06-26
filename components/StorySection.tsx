@@ -112,6 +112,35 @@ export default function StorySection() {
           </div>
         </ScrollReveal>
 
+        {/* Photo strip */}
+        <ScrollReveal delay={80} className="mb-16 -mx-6 md:-mx-16 lg:-mx-24">
+          <div className="flex gap-2 overflow-x-auto pb-2 px-6 md:px-16 lg:px-24 scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+            {[
+              { src: "/photo-demo2.webp", alt: "Day 1 — Demolition begins", aspect: "3/2" },
+              { src: "/photo-team.webp", alt: "The Johnson family at the build site", aspect: "3/2" },
+              { src: "/photo-rendering.webp", alt: "First architectural rendering", aspect: "4/3" },
+              { src: "/photo-family.webp", alt: "The Johnsons", aspect: "3/4" },
+              { src: "/photo-demo1.webp", alt: "Nikki on the build site", aspect: "3/2" },
+            ].map((photo) => (
+              <div key={photo.src} className="flex-shrink-0 relative overflow-hidden group"
+                style={{ width: "clamp(220px, 32vw, 380px)", aspectRatio: photo.aspect }}>
+                <Image src={photo.src} alt={photo.alt} fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="380px"
+                  style={{ filter: "brightness(0.88) contrast(1.05)" }}
+                />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: "linear-gradient(to top, rgba(13,9,6,0.7) 0%, transparent 50%)" }} />
+                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="font-body text-[9px] tracking-[0.3em] uppercase" style={{ color: "rgba(199,161,90,0.9)" }}>{photo.alt}</p>
+                </div>
+                <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(199,161,90,0.4), transparent)" }} />
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+
         {/* Pillars — interactive animated cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {pillars.map((p, i) => (
