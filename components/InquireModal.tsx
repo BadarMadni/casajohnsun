@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 interface Props {
   isOpen: boolean;
@@ -19,8 +20,11 @@ export default function InquireModal({ isOpen, onClose }: Props) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [mounted, setMounted] = useState(false);
 
-  if (!isOpen) return null;
+  useEffect(() => { setMounted(true); }, []);
+
+  if (!isOpen || !mounted) return null;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -49,22 +53,20 @@ export default function InquireModal({ isOpen, onClose }: Props) {
     setTimeout(() => { setSuccess(false); setError(""); setForm({ name: "", email: "", phone: "", type: types[0], message: "" }); }, 400);
   }
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center"
+      className="fixed inset-0 z-[300] flex items-center justify-center p-4"
       style={{ backgroundColor: "rgba(0,0,0,0.88)", backdropFilter: "blur(12px)" }}
       onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
     >
       <div
-        className="relative w-full sm:max-w-xl overflow-hidden sm:mx-4"
+        className="relative w-full max-w-xl overflow-y-auto mx-4"
         style={{
           backgroundColor: "#0a0704",
-          borderTop: "1px solid rgba(199,161,90,0.4)",
-          borderLeft: "1px solid rgba(199,161,90,0.15)",
-          borderRight: "1px solid rgba(199,161,90,0.15)",
-          borderBottom: "1px solid rgba(199,161,90,0.15)",
-          boxShadow: "0 -20px 80px rgba(0,0,0,0.6), 0 0 120px rgba(199,161,90,0.06)",
-          borderRadius: "2px 2px 0 0",
+          border: "1px solid rgba(199,161,90,0.3)",
+          boxShadow: "0 40px 100px rgba(0,0,0,0.8), 0 0 80px rgba(199,161,90,0.08)",
+          borderRadius: "2px",
+          maxHeight: "90vh",
         }}
       >
         {/* Animated gold top bar */}
@@ -86,7 +88,6 @@ export default function InquireModal({ isOpen, onClose }: Props) {
         </button>
 
         {success ? (
-          /* ── Success state ── */
           <div className="flex flex-col items-center text-center px-10 py-16">
             <div className="relative mb-8">
               <div className="w-20 h-20 rounded-full flex items-center justify-center"
@@ -112,9 +113,7 @@ export default function InquireModal({ isOpen, onClose }: Props) {
             </button>
           </div>
         ) : (
-          /* ── Form state ── */
           <div className="px-8 md:px-12 pt-10 pb-10">
-            {/* Header */}
             <div className="mb-8">
               <p className="font-body text-[9px] tracking-[0.6em] uppercase mb-3" style={{ color: "rgba(199,161,90,0.6)" }}>Get in Touch</p>
               <h2 className="font-heading text-[2rem] tracking-[0.06em] leading-none mb-4" style={{ color: "#C7A15A", textShadow: "0 0 40px rgba(199,161,90,0.25)" }}>Inquire</h2>
@@ -125,7 +124,6 @@ export default function InquireModal({ isOpen, onClose }: Props) {
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              {/* Row 1 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-2">
                   <label className="font-body text-[9px] tracking-[0.45em] uppercase" style={{ color: "rgba(167,154,142,0.7)" }}>
@@ -153,7 +151,6 @@ export default function InquireModal({ isOpen, onClose }: Props) {
                 </div>
               </div>
 
-              {/* Row 2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-2">
                   <label className="font-body text-[9px] tracking-[0.45em] uppercase" style={{ color: "rgba(167,154,142,0.7)" }}>Phone</label>
@@ -185,7 +182,6 @@ export default function InquireModal({ isOpen, onClose }: Props) {
                 </div>
               </div>
 
-              {/* Message */}
               <div className="flex flex-col gap-2">
                 <label className="font-body text-[9px] tracking-[0.45em] uppercase" style={{ color: "rgba(167,154,142,0.7)" }}>
                   Message <span style={{ color: "#C7A15A" }}>*</span>
@@ -224,6 +220,7 @@ export default function InquireModal({ isOpen, onClose }: Props) {
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
