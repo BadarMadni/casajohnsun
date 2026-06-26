@@ -21,7 +21,7 @@ const crew = [
     name: "Marc",
     tagline: "Builder. Partner.",
     role: null,
-    image: "/cast-marc.webp",
+    image: "/cast-nikki.webp",
   },
   {
     id: "frank",
@@ -74,7 +74,7 @@ export default function CastSection() {
             {/* Photo */}
             <div className="relative w-full md:w-64 shrink-0" style={{ minHeight: "320px", backgroundColor: "#0d0906" }}>
               <Image
-                src="/cast-nikki.webp"
+                src="/cast-marc.webp"
                 alt="Nikki"
                 fill
                 className="object-cover object-top"
