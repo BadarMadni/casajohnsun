@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import StorySection from "@/components/StorySection";
 import WatchSection from "@/components/WatchSection";
 import PartnerSection from "@/components/PartnerSection";
+import CastSection from "@/components/CastSection";
 import FooterSection from "@/components/FooterSection";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <StorySection />
         <WatchSection />
         <PartnerSection />
+        <CastSection />
         <FooterSection />
       </main>
     </>
