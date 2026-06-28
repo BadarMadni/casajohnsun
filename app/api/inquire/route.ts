@@ -1,6 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { name, email, phone, type, message } = await req.json();
@@ -44,7 +53,7 @@ export async function POST(req: NextRequest) {
 
           <div style="margin-top: 24px; padding: 20px; border: 1px solid rgba(199,161,90,0.3); background: rgba(199,161,90,0.05);">
             <p style="color: #A79A8E; font-size: 11px; letter-spacing: 2px; margin: 0 0 10px;">MESSAGE</p>
-            <p style="color: #D9D0C3; font-size: 14px; line-height: 1.8; margin: 0;">${message.replace(/\n/g, "<br>")}</p>
+            <p style="color: #D9D0C3; font-size: 14px; line-height: 1.8; margin: 0;">${escapeHtml(message).replace(/\n/g, "<br>")}</p>
           </div>
 
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(199,161,90,0.2);">
