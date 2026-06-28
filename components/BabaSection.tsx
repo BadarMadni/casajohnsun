@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function BabaSection() {
   return (
-    <section className="relative overflow-hidden py-28 md:py-40" style={{ backgroundColor: "#0B0B0B" }}>
+    <section id="baba" className="relative overflow-hidden py-28 md:py-40" style={{ backgroundColor: "#0B0B0B" }}>
 
       {/* Subtle gold radial glow */}
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(199,161,90,0.05) 0%, transparent 70%)" }} />

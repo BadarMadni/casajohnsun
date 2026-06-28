@@ -6,6 +6,7 @@ import InquireModal from "./InquireModal";
 
 const links = [
   { label: "The Story", href: "#story" },
+  { label: "Baba's Tree", href: "#baba" },
   { label: "Watch", href: "#watch" },
   { label: "Partner", href: "#partner" },
   { label: "Follow", href: "#follow" },
