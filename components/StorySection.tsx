@@ -22,13 +22,6 @@ const pillars = [
   },
 ];
 
-const stats = [
-  { num: "7,184", label: "Sq Ft" },
-  { num: "$2.4M", label: "Build Value" },
-  { num: "5,000+", label: "Early Views" },
-  { num: "2 Yrs", label: "Documented" },
-];
-
 export default function StorySection() {
   return (
     <section id="story" className="relative overflow-hidden" style={{ backgroundColor: "#0d0906" }}>
@@ -70,8 +63,7 @@ export default function StorySection() {
           <div className="pl-6 mb-8" style={{ borderLeft: "2px solid #C7A15A" }}>
             <p className="font-body text-base md:text-lg leading-loose" style={{ color: "#A79A8E" }}>
               For ten years, the Johnsons built memories inside the walls of a home they loved.
-              In 2026, they tore it down to build something extraordinary — a 7,184 sq ft modern
-              desert home in Scottsdale, Arizona, designed entirely by Nikki Johnson.
+              In 2026, they tore it down to build something extraordinary — a modern desert contemporary home in Scottsdale, Arizona, designed entirely by Nikki Johnson.
             </p>
           </div>
           <p className="font-body text-sm md:text-base leading-loose" style={{ color: "rgba(167,154,142,0.7)" }}>
@@ -79,28 +71,47 @@ export default function StorySection() {
           </p>
         </ScrollReveal>
 
-        {/* Stats — animated counters */}
+        {/* Stats */}
         <ScrollReveal delay={100} className="mb-24">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
-            {[
-              { value: 7184, prefix: "", suffix: "", label: "Sq Ft", decimals: 0, separator: true, duration: 1600 },
-              { value: 2.4, prefix: "$", suffix: "M", label: "Build Value", decimals: 1, separator: false, duration: 1400 },
-              { value: 5000, prefix: "", suffix: "+", label: "Early Views", decimals: 0, separator: true, duration: 1800 },
-              { value: 2, prefix: "", suffix: " Yrs", label: "Documented", decimals: 0, separator: false, duration: 1000 },
-            ].map((s, i) => (
-              <div key={s.label} className="flex flex-col py-10 px-8 relative"
-                style={{ borderLeft: i === 0 ? "none" : "1px solid rgba(199,161,90,0.12)", borderTop: "1px solid rgba(199,161,90,0.12)" }}>
-                <div className="mb-2">
-                  <StatCounter
-                    value={s.value} prefix={s.prefix} suffix={s.suffix}
-                    label={s.label} decimals={s.decimals} separator={s.separator} duration={s.duration}
-                    numClassName="font-heading text-3xl md:text-4xl lg:text-5xl tracking-wide tabular-nums"
-                    labelClassName="font-body text-[10px] tracking-[0.4em] uppercase"
-                  />
-                </div>
-                <div className="absolute top-0 left-0 w-4 h-px" style={{ backgroundColor: "#C7A15A", opacity: 0.6 }} />
+            {/* EST. 2026 */}
+            <div className="flex flex-col py-10 px-8 relative" style={{ borderTop: "1px solid rgba(199,161,90,0.12)" }}>
+              <div className="mb-2">
+                <p className="font-heading text-3xl md:text-4xl lg:text-5xl tracking-wide" style={{ color: "#C7A15A" }}>EST. 2026</p>
+                <p className="font-body text-[10px] tracking-[0.4em] uppercase mt-1" style={{ color: "#A79A8E" }}>Scottsdale</p>
               </div>
-            ))}
+              <div className="absolute top-0 left-0 w-4 h-px" style={{ backgroundColor: "#C7A15A", opacity: 0.6 }} />
+            </div>
+            {/* DEMOLITION TO REVEAL */}
+            <div className="flex flex-col py-10 px-8 relative" style={{ borderLeft: "1px solid rgba(199,161,90,0.12)", borderTop: "1px solid rgba(199,161,90,0.12)" }}>
+              <div className="mb-2">
+                <p className="font-heading text-2xl md:text-3xl lg:text-4xl tracking-wide leading-tight" style={{ color: "#C7A15A" }}>DEMOLITION<br />TO REVEAL</p>
+                <p className="font-body text-[10px] tracking-[0.4em] uppercase mt-1" style={{ color: "#A79A8E" }}>Build Value</p>
+              </div>
+              <div className="absolute top-0 left-0 w-4 h-px" style={{ backgroundColor: "#C7A15A", opacity: 0.6 }} />
+            </div>
+            {/* 5000+ Early Views */}
+            <div className="flex flex-col py-10 px-8 relative" style={{ borderLeft: "1px solid rgba(199,161,90,0.12)", borderTop: "1px solid rgba(199,161,90,0.12)" }}>
+              <div className="mb-2">
+                <StatCounter
+                  value={5000} prefix="" suffix="+" label="Early Views" decimals={0} separator={true} duration={1800}
+                  numClassName="font-heading text-3xl md:text-4xl lg:text-5xl tracking-wide tabular-nums"
+                  labelClassName="font-body text-[10px] tracking-[0.4em] uppercase"
+                />
+              </div>
+              <div className="absolute top-0 left-0 w-4 h-px" style={{ backgroundColor: "#C7A15A", opacity: 0.6 }} />
+            </div>
+            {/* 2 Yrs Documented */}
+            <div className="flex flex-col py-10 px-8 relative" style={{ borderLeft: "1px solid rgba(199,161,90,0.12)", borderTop: "1px solid rgba(199,161,90,0.12)" }}>
+              <div className="mb-2">
+                <StatCounter
+                  value={2} prefix="" suffix=" Yrs" label="Documented" decimals={0} separator={false} duration={1000}
+                  numClassName="font-heading text-3xl md:text-4xl lg:text-5xl tracking-wide tabular-nums"
+                  labelClassName="font-body text-[10px] tracking-[0.4em] uppercase"
+                />
+              </div>
+              <div className="absolute top-0 left-0 w-4 h-px" style={{ backgroundColor: "#C7A15A", opacity: 0.6 }} />
+            </div>
           </div>
         </ScrollReveal>
 

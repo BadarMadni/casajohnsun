@@ -19,11 +19,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Casa JohnSUN | The Journey. The Build. The Legacy.",
   description:
-    "A luxury documentary series following the Johnson family as they build their 7,184 sq ft forever home in Scottsdale, Arizona. Every decision. Every milestone. Documented and shared.",
+    "A luxury documentary series following the Johnson family as they build their home in Scottsdale, Arizona. Every decision. Every milestone. Documented and shared.",
   metadataBase: new URL("https://casajohnsun.vercel.app"),
   openGraph: {
     title: "Casa JohnSUN | The Journey. The Build. The Legacy.",
-    description: "A real family. A $2.4M build. Every moment documented.",
+    description: "A real family. A real home. Every moment documented.",
     url: "https://casajohnsun.com",
     siteName: "Casa JohnSUN",
     images: [{ url: "/house.webp", width: 1200, height: 630 }],

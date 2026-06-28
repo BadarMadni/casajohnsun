@@ -80,8 +80,6 @@ export default function FooterSection() {
 
           {/* Contact */}
           <p className="font-body text-xs mb-2" style={{ color: "#A79A8E" }}>
-            <a href="tel:6023391648" className="hover:text-[#C7A15A] transition-colors">602-339-1648</a>
-            &nbsp;·&nbsp;
             <a href="mailto:nikki@casajohnsun.com" className="hover:text-[#C7A15A] transition-colors">nikki@casajohnsun.com</a>
           </p>
 

@@ -56,7 +56,7 @@ export default function HeroSection() {
         </p>
 
         <p className="fade-up-delay font-body text-sm md:text-base leading-relaxed mb-10 max-w-lg mx-auto" style={{ color: "rgba(217,208,195,0.8)" }}>
-          A real family. A $2.4M build. Every moment documented.
+          A real family. A real home. Every moment documented.
         </p>
 
         {/* CTAs */}
@@ -98,16 +98,18 @@ export default function HeroSection() {
           </a>
         </div>
 
-        {/* Stats — animated counters */}
+        {/* Stats */}
         <div className="fade-up-delay-3 flex items-stretch gap-0 mt-14 border-t border-b" style={{ borderColor: "rgba(199,161,90,0.15)" }}>
-          <div className="px-8 md:px-12 py-5">
-            <StatCounter value={7184} suffix="" label="Sq Ft" separator duration={1600} />
+          <div className="px-8 md:px-12 py-5 flex flex-col items-center">
+            <span className="font-heading text-2xl md:text-3xl tracking-wide" style={{ color: "#C7A15A" }}>EST. 2026</span>
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase mt-1" style={{ color: "#A79A8E" }}>Scottsdale</span>
           </div>
-          <div className="px-8 md:px-12 py-5" style={{ borderLeft: "1px solid rgba(199,161,90,0.15)", borderRight: "1px solid rgba(199,161,90,0.15)" }}>
-            <StatCounter value={2.4} prefix="$" suffix="M" label="Build Value" decimals={1} duration={1400} />
+          <div className="px-8 md:px-12 py-5 flex flex-col items-center" style={{ borderLeft: "1px solid rgba(199,161,90,0.15)", borderRight: "1px solid rgba(199,161,90,0.15)" }}>
+            <StatCounter value={5000} suffix="+" label="Early Views" separator duration={1800} />
           </div>
-          <div className="px-8 md:px-12 py-5">
-            <StatCounter value={2026} label="Scottsdale" duration={1200} />
+          <div className="px-8 md:px-12 py-5 flex flex-col items-center">
+            <span className="font-heading text-lg md:text-xl tracking-wide text-center" style={{ color: "#C7A15A" }}>DEMOLITION</span>
+            <span className="font-heading text-lg md:text-xl tracking-wide text-center" style={{ color: "#C7A15A" }}>TO REVEAL</span>
           </div>
         </div>
       </div>
