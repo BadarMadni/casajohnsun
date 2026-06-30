@@ -19,15 +19,54 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Casa JohnSUN | The Journey. The Build. The Legacy.",
   description:
-    "A luxury documentary series following the Johnson family as they build their home in Scottsdale, Arizona. Every decision. Every milestone. Documented and shared.",
-  metadataBase: new URL("https://casajohnsun.vercel.app"),
+    "A luxury documentary series following the Johnson family as they build their dream home in Scottsdale, Arizona. Every decision. Every milestone. Documented and shared.",
+  metadataBase: new URL("https://www.casajohnsun.com"),
+  alternates: {
+    canonical: "https://www.casajohnsun.com",
+  },
+  keywords: [
+    "Casa JohnSUN",
+    "Johnson family",
+    "Scottsdale Arizona home build",
+    "luxury home documentary",
+    "custom home build series",
+    "family home documentary",
+    "Scottsdale real estate",
+    "home building journey",
+  ],
   openGraph: {
     title: "Casa JohnSUN | The Journey. The Build. The Legacy.",
-    description: "A real family. A real home. Every moment documented.",
-    url: "https://casajohnsun.com",
+    description:
+      "A real family. A real home. Every moment documented. Follow the Johnson family as they build their dream home in Scottsdale, Arizona.",
+    url: "https://www.casajohnsun.com",
     siteName: "Casa JohnSUN",
-    images: [{ url: "/house.webp", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/house.webp",
+        width: 1200,
+        height: 630,
+        alt: "Casa JohnSUN – Johnson Family Home Build in Scottsdale, Arizona",
+      },
+    ],
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Casa JohnSUN | The Journey. The Build. The Legacy.",
+    description:
+      "A real family. A real home. Every moment documented. Follow the Johnson family build their dream home in Scottsdale, Arizona.",
+    images: ["/house.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
