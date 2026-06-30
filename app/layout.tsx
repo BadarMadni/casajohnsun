@@ -58,6 +58,9 @@ export const metadata: Metadata = {
       "A real family. A real home. Every moment documented. Follow the Johnson family build their dream home in Scottsdale, Arizona.",
     images: ["/house.webp"],
   },
+  verification: {
+    google: "ujda9uGoF03Es0GwCCUSmExl_X8vqEKhzejeuk3wk8U",
+  },
   robots: {
     index: true,
     follow: true,
