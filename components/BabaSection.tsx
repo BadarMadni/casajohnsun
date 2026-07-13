@@ -27,6 +27,69 @@ export default function BabaSection() {
         <div className="shimmer-line mb-16" />
       </div>
 
+      {/* Baba Hooters Tribute */}
+      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center mb-20">
+        <ScrollReveal>
+          <div className="relative w-full max-w-md mx-auto mb-12 group" style={{ aspectRatio: "3/4", border: "1px solid rgba(199,161,90,0.22)" }}>
+            <Image
+              src="/baba-hooters.jpeg"
+              alt="Baba at Hooters, ninety-three years old, drinking the biggest beer through a straw"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 90vw, 448px"
+              priority
+            />
+            {/* Bottom gradient for caption readability */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 25%, transparent 50%)" }} />
+            {/* Gold corners */}
+            {(["top-2 left-2 border-t border-l", "top-2 right-2 border-t border-r", "bottom-2 left-2 border-b border-l", "bottom-2 right-2 border-b border-r"] as const).map((cls, j) => (
+              <div key={j} className={`absolute w-5 h-5 md:w-7 md:h-7 ${cls}`} style={{ borderColor: "#C7A15A", opacity: 0.7 }} />
+            ))}
+            {/* Caption */}
+            <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-8 text-center">
+              <p className="font-heading text-sm md:text-lg tracking-[0.08em]" style={{ color: "#E8C97A", textShadow: "0 1px 10px rgba(0,0,0,0.9)" }}>
+                Baba
+              </p>
+              <p className="font-body text-[9px] md:text-[10px] tracking-[0.35em] uppercase mt-1" style={{ color: "rgba(230,220,205,0.65)", textShadow: "0 1px 6px rgba(0,0,0,0.9)" }}>
+                Ninety-three years young
+              </p>
+            </div>
+          </div>
+          <div className="space-y-6 font-body text-base md:text-lg leading-loose" style={{ color: "rgba(217,208,195,0.85)" }}>
+            <p>
+              This is Baba at Hooters, ninety-three years old, drinking the biggest beer Hooters
+              pours — through a straw, because why wouldn&apos;t she — and then going home to have another.
+            </p>
+            <p>
+              Baba was Ukrainian, fearless, and funny to her core without ever once trying to be.
+              She lost her husband early and buried two sons before their time, and she wore her
+              wedding ring every single day of her life after — because she was still married to
+              him, she&apos;d say, and she always would be. That was the whole woman right there.
+              Devoted. Dedicated to her word. Not willing to negotiate on it, ever.
+            </p>
+            <p>
+              She carried more grief than most people could stand and she still showed up every day
+              with a smile, a joke that would make you spit out your drink, and a genuineness you
+              almost never see in anybody anymore. She had a big, loud circle of friends, and one
+              by one, over the years, she lost every one of them. And she told me she was ready.
+              I hated hearing it. But I had to respect it — she had accepted that her time here
+              was done, that she had served her purpose. She was right. I was just being selfish.
+            </p>
+            <p>
+              Baba was kind. Baba was real. Baba drank her beer through a straw and never cared
+              for one second what anyone thought. She was my best friend, my role model, and the
+              reason I do what I do — you&apos;ll meet her properly in Episode One.
+            </p>
+            <p>
+              She left me some of her ashes to plant at the base of her palm tree, so she&apos;ll
+              live at Casa JohnSUN forever — right where she always wanted to be, in the Arizona
+              sun. And right where I want her to be. Close to me every day, as a reminder of the
+              woman I want to be.
+            </p>
+          </div>
+        </ScrollReveal>
+      </div>
+
       {/* Write-up */}
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
         <ScrollReveal>
